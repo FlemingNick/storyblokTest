@@ -1,5 +1,11 @@
 export default defineNuxtConfig({
   css: ['@/assets/css/roboto.css'],
+  devServer: {
+    https: {
+      key: 'localhost-key.pem',
+      cert: 'localhost.pem'
+    }
+  },
   modules: [
     [
       '@storyblok/nuxt',
