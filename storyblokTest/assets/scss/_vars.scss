@@ -1,0 +1,16 @@
+// variables
+
+$dandy: #7ad9ff;
+$rose-pink: rgb(235, 182, 182);
+
+// mixins
+
+@mixin k-border {
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}
+
+@mixin k-border-debug {
+  border: 1px dotted red;
+  border-radius: 4px;
+}

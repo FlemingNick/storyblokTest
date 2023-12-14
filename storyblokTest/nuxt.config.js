@@ -1,5 +1,8 @@
 export default defineNuxtConfig({
-  css: ['@/assets/css/roboto.css'],
+  css: [
+    '@/assets/css/roboto.css', 
+    "@/assets/scss/global.scss"
+  ],
   devServer: {
     https: {
       key: 'localhost-key.pem',
@@ -17,5 +20,14 @@ export default defineNuxtConfig({
       },
     ],
     '@nuxtjs/tailwindcss',
-  ]
+  ], 
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/scss/_vars.scss" as *;',
+        },
+      },
+    },
+  },
 })
