@@ -22,6 +22,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
   ], 
   vite: {
+    assetsInclude: ['**/*.gltf', '**/*.glb'],
     css: {
       preprocessorOptions: {
         scss: {
