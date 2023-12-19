@@ -2,7 +2,6 @@
     <div>
         <h2 class="canvas-title">THREE JS Scene</h2>
         <canvas id="c" ref="canvasElement"></canvas>
-        <img src="/mario.jpg" alt="mario pic"/>
     </div>
     
 </template>
@@ -25,17 +24,12 @@
     onMounted(() => {
 
         const canvas = canvasElement.value
-        const renderer = new THREE.WebGLRenderer( { antialias: true, canvas } );
-        
+        const renderer = new THREE.WebGLRenderer( { antialias: true, canvas, alpha: true } );
+        renderer.setPixelRatio(window.devicePixelRatio);
+
         const loader = new GLTFLoader();
 
-        
-
-        const fov = 75;
-        const aspect = 2; // the canvas default
-        const near = 0.1;
-        const far = 10;
-        const camera = new THREE.PerspectiveCamera( fov, aspect, near, far );
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         camera.position.z = 2;
         const controls = new OrbitControls( camera, renderer.domElement );
 
@@ -50,6 +44,19 @@
             scene.add( light );
 
         }
+
+        window.addEventListener('resize', function () {
+
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+
+            renderer.setSize(width, height);
+
+            camera.aspect = width / height;
+
+            camera.updateProjectionMatrix();
+
+        });
 
         function render( time ) {
 
