@@ -45,8 +45,7 @@
 
         }
 
-        window.addEventListener('resize', function () {
-
+        function scale(){
             var width = window.innerWidth;
             var height = window.innerHeight;
 
@@ -55,6 +54,11 @@
             camera.aspect = width / height;
 
             camera.updateProjectionMatrix();
+        }
+
+        window.addEventListener('resize', function () {
+
+            scale();
 
         });
 
@@ -68,6 +72,8 @@
 
         }
 
+        scale();
+        
         requestAnimationFrame( render );
 
         loader.load( '/model.gltf', function ( gltf ) {

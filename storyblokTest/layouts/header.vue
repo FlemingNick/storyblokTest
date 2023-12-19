@@ -19,5 +19,5 @@
 </script>
 
 <style lang="scss" scoped>
-    @use "~/assets/scss/header.scss";
-  </style>
+  @use "~/assets/scss/header.scss";
+</style>
