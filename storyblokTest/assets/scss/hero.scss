@@ -2,8 +2,10 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 4rem);
+    height: 100vh;
     color: rgb(241, 241, 241);
+    position: relative;
+    overflow: hidden;
     
     .content-wrapper{
         z-index: 10;
@@ -66,5 +68,19 @@
 
     h1{
         text-shadow: 3px 3px 3px black;
+    }
+
+    .background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        svg {
+            transform-origin: center;
+            transform: scale(1.05);
+            filter: saturate(1.5);
+        }
     }
 }
