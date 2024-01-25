@@ -3,7 +3,7 @@
     <div class="content">
       <ul>
         <li><a href="#">About</a></li>
-        <li><a href="#">Impressum</a></li>
+        <li><a href="/impressum">Impressum</a></li>
         <li><a href="#">Security</a></li>
       </ul>
   
