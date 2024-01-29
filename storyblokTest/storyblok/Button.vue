@@ -12,5 +12,5 @@
   </script>
   
   <style lang="scss" scoped>
-    @use "~/assets/scss/buttonLink.scss";
+    @import "~/assets/scss/buttonLink.scss";
   </style>

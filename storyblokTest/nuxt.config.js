@@ -1,7 +1,9 @@
+
+
 export default defineNuxtConfig({
   css: [
-    '@/assets/css/roboto.css', 
-    "@/assets/scss/global.scss"
+    '@/assets/css/roboto.css',
+    '@/assets/scss/global.scss',
   ],
   devServer: {
     https: {
@@ -20,13 +22,17 @@ export default defineNuxtConfig({
       },
     ],
     '@nuxtjs/tailwindcss',
-  ], 
+  ],
   vite: {
     assetsInclude: ['**/*.gltf', '**/*.glb'],
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "@/assets/scss/_vars.scss" as *;',
+          additionalData: 
+          `
+          @import "@/assets/scss/font-sizes.scss";
+          @import "@/assets/scss/colors.scss";
+          `
         },
       },
     },

@@ -18,5 +18,5 @@ defineProps({ blok: Object });
 </script>
 
 <style lang="scss" scoped>
-  @use "~/assets/scss/feature.scss";
+  @import "~/assets/scss/feature.scss";
 </style>

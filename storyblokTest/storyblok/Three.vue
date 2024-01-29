@@ -7,7 +7,7 @@
 </template>
 
 <style lang="scss" scoped>
-@use "~/assets/scss/three.scss";
+@import "~/assets/scss/three.scss";
 </style>
 
 <script setup>

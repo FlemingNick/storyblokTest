@@ -79,5 +79,5 @@
   </script>
   
   <style lang="scss" scoped>
-    @use "~/assets/scss/hero.scss";
+    @import "~/assets/scss/hero.scss";
   </style>

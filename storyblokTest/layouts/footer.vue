@@ -21,5 +21,5 @@
 </script>
 
 <style lang="scss" scoped>
-    @use "~/assets/scss/footer.scss";
+    @import "~/assets/scss/footer.scss";
   </style>

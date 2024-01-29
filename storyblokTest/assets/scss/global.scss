@@ -1,13 +1,33 @@
-.k-border {
-    @include k-border;
-  }
-  
-.k-border-debug {
-@include k-border-debug;
-
-background-color: $dandy;
-}
-
 h1{
   font-size: $font-xl;
+  margin-bottom: 32px;
+}
+
+h2{
+  font-size:  $font-l;
+ 
+}
+
+h3{
+  font-size:  $font-m;
+  
+  font-weight: 600;
+}
+
+h4, p, a {
+  font-size: $font-s;
+}
+
+.btn{
+  background-color: $gray;
+  align-self: start; 
+  padding: .5em;
+  color: $white;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+
+  &:hover{
+    background-color: $petrol;
+    
+  }
 }
