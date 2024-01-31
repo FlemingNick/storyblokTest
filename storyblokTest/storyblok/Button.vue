@@ -4,6 +4,7 @@
     class="btn-link"
     v-bind:href="blok.link">
         {{ blok.name }}
+        <img src="@/assets/images/chevron.svg" alt="Navigationspfeil" aria-hidden>
     </a>
   </template>
   

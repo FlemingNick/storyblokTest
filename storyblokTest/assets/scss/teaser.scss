@@ -23,9 +23,10 @@
         svg{
             width: 0;
             height: 0;
-            
         }
+
         img{
+            aspect-ratio: 1/1;
             object-fit: cover;
             clip-path: url(#leaf);
         }

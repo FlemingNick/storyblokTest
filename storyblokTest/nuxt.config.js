@@ -30,8 +30,9 @@ export default defineNuxtConfig({
         scss: {
           additionalData: 
           `
-          @import "@/assets/scss/font-sizes.scss";
           @import "@/assets/scss/colors.scss";
+          @import "@/assets/scss/font.scss";
+          @import "@/assets/scss/font-sizes.scss";
           `
         },
       },
