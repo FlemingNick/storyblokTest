@@ -1,0 +1,46 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  .logo {
+    height: 40px;
+    width: auto;
+  }
+
+  .menu {
+    display: flex;
+  }
+
+  .menu__button {
+    align-self: center;
+    height: 22px;
+    width: auto;
+  }
+
+  .content {
+    display: none;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      display: flex;
+    }
+
+    a {
+      padding: 16px 32px;
+    }
+
+    @media (min-width: 900px) {
+      display: flex;
+    }
+  }
+}

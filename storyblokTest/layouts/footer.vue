@@ -6,7 +6,7 @@
         <li><a href="/impressum">Impressum</a></li>
         <li><a href="#">Security</a></li>
       </ul>
-  
+
       <ul>
         <li><a href="#">Instagram</a></li>
         <li><a href="#">Facebook</a></li>
@@ -16,10 +16,8 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-
-</script>
+<script lang="ts" setup></script>
 
 <style lang="scss" scoped>
-    @import "~/assets/scss/footer.scss";
-  </style>
+  @import '~/assets/scss/footer.scss';
+</style>

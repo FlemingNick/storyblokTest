@@ -1,16 +1,16 @@
-.btn-link{
-    display: flex;
-    gap: 20px;
-    width: max-content;
-    align-items: center;
-    padding: 12px 24px;
-    background-color: $black;
-    border-radius: 12px;
-    color: #fff;
-    font-size: 22px;
+.btn-link {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: $black;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 22px;
 
-    img {
-        height: 17px;
-        width: auto;
-    }
+  img {
+    height: 17px;
+    width: auto;
+  }
 }

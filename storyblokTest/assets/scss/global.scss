@@ -1,33 +1,33 @@
-h1{
+h1 {
   font-size: $font-xl;
   margin-bottom: 32px;
 }
 
-h2{
-  font-size:  $font-l;
- 
+h2 {
+  font-size: $font-l;
 }
 
-h3{
-  font-size:  $font-m;
-  
+h3 {
+  font-size: $font-m;
+
   font-weight: 600;
 }
 
-h4, p, a {
+h4,
+p,
+a {
   font-size: $font-s;
 }
 
-.btn{
+.btn {
   background-color: $gray;
-  align-self: start; 
-  padding: .5em;
+  align-self: start;
+  padding: 0.5em;
   color: $white;
   border-radius: 8px;
   transition: background-color 0.2s;
 
-  &:hover{
+  &:hover {
     background-color: $petrol;
-    
   }
 }

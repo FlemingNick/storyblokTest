@@ -1,88 +1,78 @@
 <template>
-    <div>
-        <h2 class="canvas-title">THREE JS Scene</h2>
-        <canvas id="c" ref="canvasElement"></canvas>
-    </div>
-    
+  <div>
+    <h2 class="canvas-title">THREE JS Scene</h2>
+    <canvas
+      id="c"
+      ref="canvasElement"
+    ></canvas>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-@import "~/assets/scss/three.scss";
+  @import '~/assets/scss/three.scss';
 </style>
 
 <script setup>
-    import { ref, onMounted } from 'vue'
-    import * as THREE from 'three';
-    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-    import model from '@/assets/models/MemmertUN450.gltf'
-    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { ref, onMounted } from 'vue';
+  import * as THREE from 'three';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  import model from '@/assets/models/MemmertUN450.gltf';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-    defineProps({ blok: Object })
-    
-    const canvasElement = ref(null)
-    
-    onMounted(() => {
+  defineProps({ blok: Object });
 
-        const canvas = canvasElement.value
-        const renderer = new THREE.WebGLRenderer( { antialias: true, canvas, alpha: true } );
-        renderer.setPixelRatio(window.devicePixelRatio);
+  const canvasElement = ref(null);
 
-        const loader = new GLTFLoader();
+  onMounted(() => {
+    const canvas = canvasElement.value;
+    const renderer = new THREE.WebGLRenderer({ antialias: true, canvas, alpha: true });
+    renderer.setPixelRatio(window.devicePixelRatio);
 
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 2;
-        const controls = new OrbitControls( camera, renderer.domElement );
+    const loader = new GLTFLoader();
 
-        const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 2;
+    const controls = new OrbitControls(camera, renderer.domElement);
 
-        {
+    const scene = new THREE.Scene();
 
-            const color = 0xFFFFFF;
-            const intensity = 7;
-            const light = new THREE.DirectionalLight( color, intensity );
-            light.position.set( 300, 100, 3000 );
-            scene.add( light );
+    {
+      const color = 0xffffff;
+      const intensity = 7;
+      const light = new THREE.DirectionalLight(color, intensity);
+      light.position.set(300, 100, 3000);
+      scene.add(light);
+    }
 
-        }
+    function scale() {
+      var width = window.innerWidth;
+      var height = window.innerHeight;
 
-        function scale(){
-            var width = window.innerWidth;
-            var height = window.innerHeight;
+      renderer.setSize(width, height);
 
-            renderer.setSize(width, height);
+      camera.aspect = width / height;
 
-            camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+    }
 
-            camera.updateProjectionMatrix();
-        }
+    window.addEventListener('resize', function () {
+      scale();
+    });
 
-        window.addEventListener('resize', function () {
+    function render(time) {
+      renderer.render(scene, camera);
 
-            scale();
+      requestAnimationFrame(render);
 
-        });
+      controls.update();
+    }
 
-        function render( time ) {
+    scale();
 
-            renderer.render( scene, camera );
+    requestAnimationFrame(render);
 
-            requestAnimationFrame( render );
-
-            controls.update();
-
-        }
-
-        scale();
-        
-        requestAnimationFrame( render );
-
-        loader.load( '/model.gltf', function ( gltf ) {
-
-            scene.add( gltf.scene );
-
-        })
-    })
-    
+    loader.load('/model.gltf', function (gltf) {
+      scene.add(gltf.scene);
+    });
+  });
 </script>
-
-

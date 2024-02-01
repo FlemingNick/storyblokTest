@@ -1,10 +1,17 @@
 <template>
   <div class="header">
-    <img class="logo" src="@/assets/images/medice-logo.svg" alt="Medice Health Family Logo">
+    <img
+      class="logo"
+      src="@/assets/images/medice-logo.svg"
+      alt="Medice Health Family Logo"
+    />
 
     <div class="menu">
       <button class="menu__button">
-        <img src="@/assets/images/burger.svg" alt="Menu">
+        <img
+          src="@/assets/images/burger.svg"
+          alt="Menu"
+        />
       </button>
 
       <div class="content">
@@ -20,10 +27,8 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-  
-</script>
+<script lang="ts" setup></script>
 
 <style lang="scss" scoped>
-  @import "~/assets/scss/header.scss";
+  @import '~/assets/scss/navigation.scss';
 </style>

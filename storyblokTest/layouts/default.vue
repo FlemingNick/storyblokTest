@@ -1,17 +1,15 @@
 <template>
   <div>
-    <Header/>
+    <Navigation />
     <slot />
 
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script lang="ts" setup>
-  import Header from './header.vue'
-  import Footer from './footer.vue'
+  import Navigation from './navigation.vue';
+  import Footer from './footer.vue';
 </script>
 
-<style>
-
-</style>
+<style></style>
