@@ -1,16 +1,17 @@
 .btn-link {
   align-items: center;
   background-color: $black;
-  border-radius: 12px;
-  color: #fff;
+  border-radius: $border-radius;
+  color: $white;
   display: flex;
-  font-size: 22px;
-  gap: 20px;
-  padding: 12px 24px;
+  font-size: $font-m;
+  gap: $spacing;
+  padding: $spacing--05 $spacing;
   width: max-content;
+  cursor: pointer;
 
   img {
-    height: 17px;
+    height: $font-s;
     width: auto;
   }
 }
