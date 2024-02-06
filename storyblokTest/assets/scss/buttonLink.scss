@@ -1,17 +1,60 @@
 .btn-link {
+  position: relative;
   align-items: center;
+  justify-content: center;
   background-color: $black;
   border-radius: $border-radius;
-  color: $white;
   display: flex;
   font-size: $font-m;
   gap: $spacing;
   padding: $spacing--05 $spacing;
   width: max-content;
+  overflow: hidden;
   cursor: pointer;
+
+  span {
+    color: $white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .desktop-hover {
+    height: 1px;
+    width: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    position: absolute;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 120px;
+      height: 120px;
+      background-color: $petrol;
+      border-radius: 100rem; //circle
+      transition:
+        opacity 0.3s ease-in-out,
+        transform 0.3s ease-in-out;
+      transform-origin: center;
+      transform: scale(0.3);
+      opacity: 0;
+    }
+  }
 
   img {
     height: $font-s;
     width: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  &:hover {
+    .desktop-hover::after {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 }
