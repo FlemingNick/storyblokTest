@@ -1,42 +1,45 @@
+/* stylelint-disable function-url-quotes */
+
 .teaser-container {
-  width: 100%;
   background-color: $yellow;
+  width: 100%;
 
   .teaser-content {
     display: flex;
     gap: 32px;
-    max-width: 1200px;
     margin: 0 auto;
+    max-width: 1200px;
   }
 
   .media-wrapper {
-    display: flex;
     align-items: flex-end;
+    display: flex;
+    flex: 1 1 0;
+    height: 100%;
     justify-content: flex-end;
     position: relative;
-    height: 100%;
     width: 50%;
-    flex: 1 1 0;
 
     svg {
-      width: 0;
       height: 0;
+      width: 0;
     }
 
     img {
       aspect-ratio: 1/1;
-      object-fit: cover;
       clip-path: url(#leaf);
+      object-fit: cover;
     }
   }
+
   .content-wrapper {
-    padding: 32px 0;
-    width: 50%;
-    flex: 1 1 0;
     display: flex;
+    flex: 1 1 0;
     flex-direction: column;
     gap: 16px;
     justify-content: center;
+    padding: 32px 0;
+    width: 50%;
 
     .sub-header {
       font-size: 18px;

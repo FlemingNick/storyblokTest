@@ -1,13 +1,13 @@
 .btn-link {
-  display: flex;
-  gap: 20px;
-  width: max-content;
   align-items: center;
-  padding: 12px 24px;
   background-color: $black;
   border-radius: 12px;
   color: #fff;
+  display: flex;
   font-size: 22px;
+  gap: 20px;
+  padding: 12px 24px;
+  width: max-content;
 
   img {
     height: 17px;

@@ -1,53 +1,57 @@
+/* stylelint-disable function-url-quotes */
+
 .hero-container {
-  width: 100%;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  position: relative;
   overflow: hidden;
+  position: relative;
+  width: 100%;
 
   .hero-wrapper {
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    max-width: 1200px;
     height: 100%;
-    width: 100%;
     margin: 0 auto;
+    max-width: $max-width;
+    width: 100%;
 
     .video-wrapper {
-      position: relative;
-      height: 100%;
+      align-items: flex-end;
       aspect-ratio: 1/1;
-      transform: translate(-20px, 40px);
+      display: flex;
+      height: 100%;
+      position: relative;
+      transform: translate(calc($spacing * -1), $spacing--2);
 
       svg {
-        width: 0;
         height: 0;
+        width: 0;
       }
 
       video {
-        object-fit: cover;
-        clip-path: url(#leaf);
-        width: 100%;
-        position: absolute;
         aspect-ratio: 1/1;
+        clip-path: url(#leaf);
+        object-fit: cover;
+        position: absolute;
+        width: 100%;
       }
     }
 
     .content {
       display: flex;
-      justify-content: flex-end;
-      height: 100%;
-      width: 100%;
       flex-direction: column;
-      padding: 20px;
+      height: 100%;
+      justify-content: flex-end;
+      padding: $spacing;
+      width: 100%;
 
       :deep(h1) {
         font-size: 52px;
         letter-spacing: 0.02em;
         line-height: 1.1;
-        margin-bottom: 20px;
+        margin-bottom: $spacing--2;
       }
 
       a {
@@ -56,45 +60,48 @@
     }
 
     @media (min-width: 900px) {
-      flex-wrap: wrap;
       flex-direction: row;
 
       .video-wrapper {
-        width: 50%;
-        flex: 1 1 0;
         transform: translate(0, 0);
+        width: 60%;
       }
 
       .content {
-        flex: 1 1 0;
-        width: 50%;
+        align-self: flex-start;
+        justify-content: center;
+        width: 40%;
+
+        a {
+          align-self: flex-start;
+        }
       }
     }
   }
 
   .background {
-    position: absolute;
+    height: 100%;
     left: 0;
+    position: absolute;
     top: 0;
     width: 100%;
-    height: 100%;
     z-index: -1;
 
     .white-gradient {
-      width: 100%;
-      height: 400px;
-      top: 0;
-      left: 0;
-      position: absolute;
       background: rgb(255, 255, 255);
       background: linear-gradient(160deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 40%);
+      height: 400px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
     }
 
     svg {
       position: relative;
-      z-index: -1;
-      transform-origin: center;
       transform: scale(1.05);
+      transform-origin: center;
+      z-index: -1;
     }
 
     .mobile {

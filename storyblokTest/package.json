@@ -1,9 +1,18 @@
 {
   "private": true,
+  "browserslist": [
+    "last 2 major versions",
+    "> 5%",
+    "not op_mini all",
+    "not ie < 12",
+    "not dead"
+  ],
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
-    "stylelint-check": "npx stylelint **/*.scss",
+    "lint:scss": "stylelint '**/*.scss'",
+    "lint:scss:fix": "stylelint '**/*.scss' --fix",
+    "stylelint-check": "stylelint-config-prettier-check",
     "dev-ssl": "NODE_TLS_REJECT_UNAUTHORIZED=0 nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -24,10 +33,11 @@
     "prettier": "^3.2.4",
     "sass": "^1.70.0",
     "sass-loader": "^14.0.0",
-    "stylelint": "^16.2.0",
-    "stylelint-config-prettier": "^9.0.5",
-    "stylelint-config-standard": "^36.0.0",
-    "stylelint-config-standard-scss": "^13.0.0"
+    "stylelint": "^14.12.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-no-unsupported-browser-features": "^6.0.1"
   },
   "dependencies": {
     "gsap": "^3.12.5",

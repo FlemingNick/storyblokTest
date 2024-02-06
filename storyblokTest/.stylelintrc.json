@@ -1,3 +1,71 @@
 {
-  "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier"]
+  "extends": ["stylelint-config-sass-guidelines", "stylelint-config-recommended-vue/scss", "stylelint-config-prettier"],
+  "plugins": ["stylelint-no-unsupported-browser-features"],
+  "defaultSeverity": "error",
+  "rules": {
+    "max-nesting-depth": 4,
+    "selector-class-pattern": [
+      "^([a-z0-9-_]+)+$",
+      {
+        "resolveNestedSelectors": false
+      }
+    ],
+    "selector-max-compound-selectors": 4,
+    "selector-no-qualifying-type": [
+      true,
+      {
+        "ignore": ["attribute", "class"]
+      }
+    ],
+    "value-no-vendor-prefix": [
+      true,
+      {
+        "ignoreValues": ["box"]
+      }
+    ],
+    "order/order": [
+      [
+        "custom-properties",
+        "at-variables",
+        "dollar-variables",
+        {
+          "type": "at-rule",
+          "name": "include",
+          "hasBlock": false
+        },
+        "declarations",
+        "rules",
+        {
+          "type": "at-rule",
+          "name": "include",
+          "hasBlock": true
+        }
+      ]
+    ],
+    "order/properties-alphabetical-order": true,
+    "plugin/no-unsupported-browser-features": [
+      true,
+      {
+        "severity": "warning",
+        "ignore": [
+          "viewport-units",
+          "css3-cursors",
+          "css-gradients",
+          "outline",
+          "css-sticky",
+          "css-masks",
+          "css-clip-path",
+          "multicolumn",
+          "user-select-none",
+          "css-mixblendmode",
+          "intrinsic-width",
+          "css-touch-action",
+          "pointer",
+          "css-hyphens"
+        ]
+      }
+    ],
+    "scss/dollar-variable-pattern": ".+[_a-z]-?.+",
+    "scss/percent-placeholder-pattern": "^ids-([a-z0-9-_]+)+$"
+  }
 }
