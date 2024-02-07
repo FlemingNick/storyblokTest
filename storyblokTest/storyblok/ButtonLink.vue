@@ -3,12 +3,13 @@
     ref="buttonRef"
     v-editable="blok"
     class="btn-link"
-    v-bind:href="blok.link"
+    v-bind:href="blok.link.url"
   >
     <span>
       {{ blok.name }}
     </span>
     <img
+      v-if="blok.icon"
       src="@/assets/images/chevron.svg"
       alt="navigation arrow"
       aria-hidden
@@ -22,7 +23,7 @@
 </template>
 
 <script setup>
-  import { ref, onMounted } from 'vue';
+  import { ref, onMounted, onUnmounted } from 'vue';
   import gsap from 'gsap';
 
   defineProps({ blok: Object });
@@ -30,22 +31,25 @@
   let buttonRef = ref();
   let buttonHoverRef = ref();
 
-  onMounted(() => {
-    window.addEventListener('mousemove', (e) => {
-      let buttonBoundingClient = buttonRef.value.getBoundingClientRect();
-      let mouseOriginX = e.clientX - buttonBoundingClient.left;
-      let mouseOriginY = e.clientY - buttonBoundingClient.top;
-      let mouseDamping = 0;
+  function mouseMove(e) {
+    let buttonBoundingClient = buttonRef.value.getBoundingClientRect();
+    let mouseOriginX = e.clientX - buttonBoundingClient.left;
+    let mouseOriginY = e.clientY - buttonBoundingClient.top;
 
-      console.log(mouseOriginY);
-
-      gsap.to(buttonHoverRef.value, {
-        x: mouseOriginX,
-        y: mouseOriginY,
-        duration: 0.3,
-        ease: 'none'
-      });
+    gsap.to(buttonHoverRef.value, {
+      x: mouseOriginX,
+      y: mouseOriginY,
+      duration: 0.3,
+      ease: 'none'
     });
+  }
+
+  onMounted(() => {
+    window.addEventListener('mousemove', (e) => mouseMove(e));
+  });
+
+  onUnmounted(() => {
+    window.removeEventListener('mousemove', mouseMove());
   });
 </script>
 

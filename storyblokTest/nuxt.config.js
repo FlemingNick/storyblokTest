@@ -28,6 +28,7 @@ export default defineNuxtConfig({
           @import "@/assets/scss/colors.scss";
           @import "@/assets/scss/font.scss";
           @import "@/assets/scss/font-sizes.scss";
+          @import "@/assets/scss/focus.scss";
           `
         }
       }
