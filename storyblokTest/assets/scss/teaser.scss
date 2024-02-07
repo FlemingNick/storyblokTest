@@ -27,8 +27,12 @@
 
     img {
       aspect-ratio: 1/1;
-      clip-path: url(#leaf);
+      //clip-path: url(#teaserLeafRight);
       object-fit: cover;
+    }
+
+    svg path {
+      transform-origin: center;
     }
   }
 
