@@ -9,6 +9,10 @@
     gap: 32px;
     margin: 0 auto;
     max-width: 1200px;
+
+    &.right {
+      flex-direction: row-reverse;
+    }
   }
 
   .media-wrapper {

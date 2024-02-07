@@ -3,7 +3,10 @@
     v-editable="blok"
     class="teaser-container"
   >
-    <div class="teaser-content">
+    <div
+      class="teaser-content"
+      :class="blok.imageRight ? 'right' : 'left'"
+    >
       <div class="media-wrapper">
         <svg
           viewBox="0 0 1 1"
