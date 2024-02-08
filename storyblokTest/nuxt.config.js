@@ -24,6 +24,7 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         scss: {
           additionalData: `
+          @import "@/assets/scss/reset.scss";
           @import "@/assets/scss/spacings.scss";
           @import "@/assets/scss/colors.scss";
           @import "@/assets/scss/font.scss";

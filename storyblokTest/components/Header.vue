@@ -10,36 +10,38 @@
 
 <template>
   <div class="header">
-    <img
-      class="logo"
-      src="@/assets/images/medice-logo.svg"
-      alt="Medice Health Family Logo"
-    />
+    <a href="/">
+      <img
+        class="logo"
+        src="@/assets/images/medice-logo.svg"
+        alt="Medice Health Family Logo"
+      />
+    </a>
 
-    <div class="menu">
-      <button class="menu__button">
-        <img
-          src="@/assets/images/burger.svg"
-          alt="Menu"
-        />
-      </button>
+    <nav class="menu">
+      <li>
+        <button class="menu__button">
+          <img
+            src="@/assets/images/burger.svg"
+            alt="Menu"
+          />
+        </button>
+      </li>
 
-      <div class="content">
-        <nav v-if="headerMenu">
-          <ul>
-            <li
-              v-for="blok in headerMenu"
-              :key="blok._uid"
-            >
-              <NuxtLink :to="`/${blok.menu_link.cached_url}`">
-                {{ blok.menu_link.story.name }}
-                {{ blok.menu_link.cached_url }}
-              </NuxtLink>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+      <ul
+        v-if="headerMenu"
+        class="links"
+      >
+        <li
+          v-for="blok in headerMenu"
+          :key="blok._uid"
+        >
+          <NuxtLink :to="`/${blok.menu_link.cached_url}`">
+            {{ blok.menu_link.story.name }}
+          </NuxtLink>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 

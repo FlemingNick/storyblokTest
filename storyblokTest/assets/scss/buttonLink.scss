@@ -7,7 +7,7 @@
   display: flex;
   font-size: $font-m;
   gap: $spacing;
-  padding: $spacing--05 $spacing;
+  padding: $spacing calc($spacing + $spacing--05);
   width: max-content;
   overflow: hidden;
   cursor: pointer;
