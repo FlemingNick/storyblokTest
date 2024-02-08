@@ -1,7 +1,7 @@
 a,
 button,
 input {
-  &:focus-within {
+  &:focus-visible {
     outline: none;
     box-shadow: 0 0 0 4px rgb(30 208 225);
   }

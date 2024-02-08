@@ -29,10 +29,16 @@
       width: 0;
     }
 
-    img {
-      aspect-ratio: 1/1;
-      //clip-path: url(#teaserLeafRight);
-      object-fit: cover;
+    .image-wrapper {
+      aspect-ratio: 7/6;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+
+      img {
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
     }
 
     svg path {
