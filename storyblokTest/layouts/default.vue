@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navigation />
+    <Header />
     <slot />
 
     <Footer />
@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts" setup>
-  import Navigation from './navigation.vue';
+  import Header from '../components/Header.vue';
   import Footer from './footer.vue';
 </script>
 
