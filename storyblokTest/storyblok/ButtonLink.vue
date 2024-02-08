@@ -32,16 +32,25 @@
   let buttonHoverRef = ref();
 
   function mouseMove(e) {
-    let buttonBoundingClient = buttonRef.value.getBoundingClientRect();
-    let mouseOriginX = e.clientX - buttonBoundingClient.left;
-    let mouseOriginY = e.clientY - buttonBoundingClient.top;
+    if (buttonRef.value) {
+      let buttonBoundingClient = buttonRef.value.getBoundingClientRect();
+      let mouseOriginX = e.clientX - buttonBoundingClient.left;
+      let mouseOriginY = e.clientY - buttonBoundingClient.top;
 
-    gsap.to(buttonHoverRef.value, {
-      x: mouseOriginX,
-      y: mouseOriginY,
-      duration: 0.3,
-      ease: 'none'
-    });
+      if (
+        mouseOriginX > 0 &&
+        mouseOriginX < buttonBoundingClient.width &&
+        mouseOriginY > 0 &&
+        mouseOriginY < buttonBoundingClient.height
+      ) {
+        gsap.to(buttonHoverRef.value, {
+          x: mouseOriginX,
+          y: mouseOriginY,
+          duration: 0.3,
+          ease: 'none'
+        });
+      }
+    }
   }
 
   onMounted(() => {
@@ -49,7 +58,7 @@
   });
 
   onUnmounted(() => {
-    window.removeEventListener('mousemove', mouseMove());
+    window.removeEventListener('mousemove', mouseMove);
   });
 </script>
 
