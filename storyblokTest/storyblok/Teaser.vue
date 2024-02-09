@@ -2,6 +2,7 @@
   <div
     v-editable="blok"
     class="teaser-container"
+    :class="blok.layout"
   >
     <div
       class="teaser-content"

@@ -1,9 +1,33 @@
 /* stylelint-disable function-url-quotes */
 
-.teaser-container {
+.orange {
   background-color: #ffbf36; //medibee color
+  .sub-header__deko {
+    background-color: #fdda7e; //medibee light color
+  }
+}
+
+.blue {
+  background-color: #dbe7f7;
+  .sub-header__deko {
+    background-color: $white;
+  }
+}
+
+.green {
+  background-color: #9bd0b7;
+  .sub-header__deko {
+    background-color: #bffde0;
+  }
+}
+
+.teaser-container {
   width: 100%;
   overflow: hidden;
+
+  @media (min-width: 768px) {
+    margin-top: 4rem;
+  }
 
   .teaser-content {
     display: flex;
@@ -75,7 +99,6 @@
         width: 44px;
         height: 44px;
         border-radius: 100rem;
-        background-color: #fdda7e; //medibee light color
         z-index: -1;
       }
     }
