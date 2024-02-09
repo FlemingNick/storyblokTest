@@ -33,11 +33,18 @@
             :style="{ clipPath: 'url(#' + blok._uid + ')' }"
           />
         </div>
+
+        <GradientShape shape="leaf" />
       </div>
+
       <div class="content-wrapper">
-        <h2 class="sub-header">{{ blok.subheadline }}</h2>
+        <div class="sub-header">
+          <h2>{{ blok.subheadline }}</h2>
+          <span class="sub-header__deko"></span>
+        </div>
+
         <h3>{{ blok.headline }}</h3>
-        <p>{{ blok.text }}</p>
+        <div v-html="textContent"></div>
 
         <StoryblokComponent
           v-for="blok in blok.button"
@@ -50,9 +57,9 @@
 </template>
 
 <script setup>
-  import ButtonLink from './ButtonLink.vue';
+  const props = defineProps({ blok: Object });
 
-  defineProps({ blok: Object });
+  const textContent = computed(() => renderRichText(props.blok.text));
 </script>
 
 <style lang="scss" scoped>

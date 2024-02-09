@@ -37,7 +37,6 @@
   .links {
     align-items: center;
     display: none;
-    margin: auto;
     max-width: 1200px;
     width: 100%;
     gap: $spacing;
@@ -51,6 +50,7 @@
     @media (min-width: 900px) {
       display: flex;
       padding-left: $spacing--4;
+      margin-bottom: $spacing;
     }
   }
 }

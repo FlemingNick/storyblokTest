@@ -1,0 +1,16 @@
+.gradient-shape {
+  position: absolute;
+  height: 100%;
+  aspect-ratio: 1/1;
+  transform-origin: center;
+  background-color: red;
+}
+
+.circle {
+  border-radius: 100rem;
+}
+
+.leaf {
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
