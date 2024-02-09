@@ -12,18 +12,29 @@
 </template>
 
 <script setup>
-  defineProps({
+  const probs = defineProps({
     shape: {
       type: String,
       default: 'circle',
       validator: (value) => ['leaf', 'circle'].includes(value)
     },
-    gradientStart: String,
-    gradientEnd: String,
-    gradientAngle: String
+    color: {
+      type: String,
+      default: '#ffffff'
+    },
+    angle: {
+      type: Number,
+      default: 0
+    }
   });
+
+  const gradient = ref('linear-gradient(' + probs.angle + 'deg, ' + probs.color + '00 60%, ' + probs.color + ' 100%)');
 </script>
 
 <style lang="scss" scoped>
   @import '~/assets/scss/gradient-shape.scss';
+
+  .gradient-shape {
+    background: v-bind(gradient);
+  }
 </style>

@@ -15,7 +15,8 @@ export default defineNuxtConfig({
           region: '' // Set 'US" if your space is created in US region (EU default)
         }
       }
-    ]
+    ],
+    '@nuxtjs/tailwindcss'
   ],
   vite: {
     assetsInclude: ['**/*.gltf', '**/*.glb'],

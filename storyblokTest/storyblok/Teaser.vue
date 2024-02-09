@@ -35,7 +35,19 @@
           />
         </div>
 
-        <GradientShape shape="leaf" />
+        <GradientShape
+          shape="leaf"
+          :angle="120"
+          :color="
+            blok.layout === 'orange'
+              ? '#EDAB00'
+              : blok.layout === 'blue'
+                ? '#CCDCF4'
+                : blok.layout === 'green'
+                  ? '#8BBCA5'
+                  : '#dddddd'
+          "
+        />
       </div>
 
       <div class="content-wrapper">

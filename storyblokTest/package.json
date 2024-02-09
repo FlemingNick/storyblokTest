@@ -22,6 +22,7 @@
     "startCommand": "npm run stackblitz"
   },
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.10.0",
     "@storyblok/nuxt": "^5.7.8",
     "@types/three": "^0.159.0",
     "eslint": "^8.56.0",
