@@ -25,9 +25,9 @@ export default defineNuxtConfig({
           additionalData: `
           @import "@/assets/scss/reset.scss";
           @import "@/assets/scss/spacings.scss";
+          @import "@/assets/scss/font-sizes.scss";
           @import "@/assets/scss/colors.scss";
           @import "@/assets/scss/font.scss";
-          @import "@/assets/scss/font-sizes.scss";
           @import "@/assets/scss/focus.scss";
           `
         }
